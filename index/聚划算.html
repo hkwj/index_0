@@ -1,0 +1,814 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<link rel="stylesheet" href="css/common.css"/>
+<style>
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+html{
+	font-size:32px;
+}
+body{
+	overflow-x:hidden;
+	min-width:10rem;
+}
+.page{
+	width:10rem; 
+	margin:0 auto;
+	background:#f6f6f6;
+}
+.page .title { 
+	height:1.5625rem; 
+}
+.page .title .btn_back{
+	 margin:0.375rem 0 0 0.375rem; 
+	 display:inline-block;
+	 width:1.90625rem;
+	  height:0.90625rem;
+	  background:url(img/btn_back.png) no-repeat;
+	  background-size:100% 100%;
+	  text-indent:-999999px;
+}
+.page .banner{
+	 position:relative; 
+	 height:4.65625rem; 
+	 background:#ccc;
+}
+.page .banner ul{
+	 position:absolute;
+	 left:0;top:0;
+	 width:6250rem; 
+	 height:4.1875rem;
+}
+.page .banner ul li{
+	float:left;
+	width:10rem; 
+	height:100%;
+}
+.page .banner ul li img{
+	width:100%;
+}
+.page .banner ol{ 
+	position:absolute;
+	left:50%;bottom:0; 
+	margin-left:-0.71875rem;
+	width:1.40625rem;
+}
+.page .banner ol li{
+	float:left;
+	width:0.15625rem; 
+	height:0.15625rem; 
+	border-radius:50%; 
+	margin-right:0.12625rem;
+	 background:#a9a9a9;
+}
+.page .banner ol li:nth-last-child(1){ 
+	margin:0;
+}
+.page .banner ol li.active{ 
+	background:#ff4300;
+}
+
+.color_shop_mark{
+	width:10rem; 
+	margin:0 auto;
+	background:#fff;
+	margin-top:0.15625rem;
+	font:0.2375rem Verdana, Geneva, sans-serif;
+}
+.color_shop_mark li{
+	width:1.25rem;
+	height:1.25rem;
+	float:left;
+	margin:0.625rem;
+	background-size:100% 100%;
+	text-align:center;
+	line-height:3.125rem;
+}
+.color_shop_mark li:nth-child(1){
+	background:url(img/shopping1.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(2){
+	background:url(img/shopping2.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(3){
+	background:url(img/shopping3.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(4){
+	background:url(img/shopping4.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(5){
+	background:url(img/shopping5.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(6){
+	background:url(img/shopping6.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(7){
+	background:url(img/shopping7.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.color_shop_mark li:nth-child(8){
+	background:url(img/shopping8.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+}
+.top10{
+	width:9.375rem;
+	height:1.40625rem;
+	margin:0 auto;
+	border-bottom:0.00625rem solid #ccc;
+}
+.top10 .top10_left{
+	margin-top:0.3125rem;
+	height:0.9375rem;
+	font:bold 0.375rem/0.9375rem Verdana, Geneva, sans-serif;
+	float:left;
+}
+.top10 .top10_left span{
+	color:red;
+	font-size:bold;
+	margin-right:0.125rem;
+}
+.top10_right{
+	margin-top:0.3125rem;
+	height:0.9375rem;
+	font:bold 0.4375rem/0.9375rem Verdana, Geneva, sans-serif;
+	float:right;
+}
+.top10_content{
+	width:9.375rem;
+	margin:0 auto;
+	margin-top:0.3125rem;
+}
+
+.top10_content li{
+	margin-bottom:0.25rem;
+}
+.top10_content .top_li_index1{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#e10203;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img1{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top1.png) no-repeat;
+	background-size:100% 100%;
+}
+.top10_content li .top_li_right{
+	width:5.4375rem;
+	height:1.875rem;
+	background:#f4f4f4;
+}
+.top10_content li .top_li_right .word{
+	height:1.875rem;
+	font:bold 0.375rem Verdana, Geneva, sans-serif;
+}
+.top10_content li .top_li_right .word .p1{
+	margin:0.3125rem;
+}
+.top10_content li .top_li_right .word .p2{
+	margin:0.3125rem;
+	margin-top:0.15625rem;
+}
+.top10_content li .top_li_right .word .p2 span{
+	margin-left:0.125rem;
+	text-decoration:line-through;
+}
+.top10_content li .top_li_right .price{
+	margin-top:0.5625rem;
+	font:bold 0.5rem Verdana, Geneva, sans-serif;
+	color:red;
+}
+
+
+.top10_content .top_li_index2{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ff4800;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img2{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top2.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index3{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ff7300;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img3{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top3.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index4{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ff9d01;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img4{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top4.png) no-repeat;
+	background-size:100% 100%;
+}
+.top10_content .top_li_index5{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ffa800;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img5{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top5.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index6{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ffb400;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img6{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top6.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index7{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ffba00;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img7{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top7.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index8{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#fdd001;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img8{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top8.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index9{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ffd618;
+	text-align:center;
+	font:bold 0.8125rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img9{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top9.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.top10_content .top_li_index10{
+	width:0.9375rem;
+	height:1.875rem;
+	background:#ffe153;
+	text-align:center;
+	font:bold 0.6rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#fff;
+}
+.top10_content li .img10{
+	width:2.8125rem;
+	height:1.875rem;
+	background:url(img/top10.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.more_head{
+	width:9.375rem;
+	height:1.875rem;
+	margin:0 auto;
+	text-align:center;
+	font:0.6875rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#636363;
+	background:#f5f5f5;
+	margin-bottom:0.15625rem;
+}
+
+
+.more_content{
+	width:9.375rem;
+	margin:0 auto;
+	margin-bottom:0.3125rem;
+}
+.more_content .more_content_left{
+	width:2.375rem;
+	height:5.5rem;
+	background:url(img/more.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.more_content .more_content_right{
+	width:6.875rem;
+}
+
+.more_content .more_content_right ul li{
+	width:2.25rem;
+	height:1.34375rem;
+	border:0.03125rem solid #ccc;
+	float:left;
+	margin-left:-0.03125rem;
+	margin-top:-0.03125rem;
+	font:0.5rem Verdana, Geneva, sans-serif;
+	text-align:center;
+	line-height:1.34375rem;
+}
+/*.more_content{
+	width:9.375rem;
+	margin:0 auto;
+	margin-bottom:0.3125rem;
+}
+.more_content .more_content_left{
+	width:2,375rem;
+	height:5.5rem;
+	background:url(img/more.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.more_content .more_content_right{
+	width:6.875rem;
+}
+
+.more_content .more_content_right ul li{
+	width:2.25rem;
+	height:1.34375rem;
+	border:0.03125rem solid #ccc;
+	float:left;
+	margin-left:-0.03125rem;
+	margin-top:-0.03125rem;
+	font:0.625rem Verdana, Geneva, sans-serif;
+	text-align:center;
+	line-height:1.34375rem;
+}*/
+.more_content .more_content_right ul li:nth-child(1),.more_content .more_content_right ul li:nth-child(6),.more_content .more_content_right ul li:nth-child(8){
+	color:red;
+}
+
+.more_head_1{
+	width:9.375rem;
+	height:1.875rem;
+	margin:0 auto;
+	text-align:center;
+	font:0.6875rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#636363;
+	background:#f5f5f5;
+	margin-bottom:0.15625rem;
+}
+.more_content_1{
+	width:9.375rem;
+	margin:0 auto;
+	margin-bottom:0.3125rem;
+}
+.more_content_1 .more_content_left_1{
+	width:2.375rem;
+	height:5.5rem;
+	background:url(img/more1.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.more_content_1 .more_content_right_1{
+	width:6.875rem;
+}
+
+.more_content_1 .more_content_right_1 ul li{
+	width:2.25rem;
+	height:1.34375rem;
+	border:0.03125rem solid #ccc;
+	float:left;
+	margin-left:-0.03125rem;
+	margin-top:-0.03125rem;
+	font:0.5rem Verdana, Geneva, sans-serif;
+	text-align:center;
+	line-height:1.34375rem;
+}
+.more_content_1 .more_content_right_1 ul li:nth-child(1),.more_content_1 .more_content_right_1 ul li:nth-child(6),.more_content_1 .more_content_right_1 ul li:nth-child(8){
+	color:red;
+}
+
+
+
+.more_head_2{
+	width:9.375rem;
+	height:1.875rem;
+	margin:0 auto;
+	text-align:center;
+	font:0.6875rem/1.875rem Verdana, Geneva, sans-serif;
+	color:#636363;
+	background:#f5f5f5;
+	margin-bottom:0.15625rem;
+}
+.more_content_2{
+	width:9.375rem;
+	margin:0 auto;
+	margin-bottom:0.3125rem;
+}
+.more_content_2 .more_content_left_2{
+	width:2.375rem;
+	height:5.5rem;
+	background:url(img/more2.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.more_content_2 .more_content_right_2{
+	width:6.875rem;
+}
+
+.more_content_2 .more_content_right_2 ul li{
+	width:2.25rem;
+	height:1.34375rem;
+	border:0.03125rem solid #ccc;
+	float:left;
+	margin-left:-0.03125rem;
+	margin-top:-0.03125rem;
+	font:16px Verdana, Geneva, sans-serif;
+	text-align:center;
+	line-height:1.34375rem;
+}
+.more_content_2 .more_content_right_2 ul li:nth-child(1),.more_content_2 .more_content_right_2 ul li:nth-child(6),.more_content_2 .more_content_right_2 ul li:nth-child(8){
+	color:red;
+}
+.serve{
+	width:9.375rem;
+	height:2.5rem;
+	margin:0 auto;
+	margin-top:0.15625rem;
+	margin-bottom:0.3125rem;
+}
+.serve li{
+	width:3.125rem;
+	height:2.5rem;
+	float:left;
+}
+.serve li:nth-child(1){
+	background:url(img/serve1.png) no-repeat;
+	background-size:100% 100%;
+}
+.serve li:nth-child(2){
+	background:url(img/serve2.png) no-repeat;
+	background-size:100% 100%;
+}
+.serve li:nth-child(3){
+	background:url(img/serve3.png) no-repeat;
+	background-size:100% 100%;
+}
+
+.login{
+	width:9.375rem;
+	height:1,34375rem;
+	background:f8f8f8;
+	margin-top:0.15625rem;
+	margin:0 auto;
+	font:0.75rem Verdana, Geneva, sans-serif;
+	line-height:1.34375rem;
+}
+.login a{
+	float:left;
+}
+.login a:nth-child(1){
+	margin-left:0.4375rem;
+}
+.login a:nth-child(2){
+	margin-left:0.78125rem;
+}
+.login a:nth-child(3){
+	margin-left:2.5rem;
+}
+.login a:nth-child(4){
+	width:0.5rem;
+	height:0.75rem;
+	margin-top:0.3125rem;
+	margin-left:0.15625rem;
+	background:url(img/arrow.png) no-repeat 50% 50%;
+	background-size:100% 100%;
+	
+}
+
+.bottom{
+	margin:0 auto;
+	width:10rem;
+	height:5.09375rem;
+	background:url(img/bottom.png) no-repeat;
+	background-size:100% 100%;
+}
+</style>
+<script>
+window.onresize = function(){	
+	document.documentElement.style.fontSize = 32/320*document.documentElement.clientWidth + "px";	
+};
+
+
+
+</script>
+</head>
+
+<body>
+<div class="page">
+	<div class="title">
+    	<a class="btn_back" href="javascript:;">返回</a>
+    </div>
+
+	<div class="banner">
+    	<ul>
+        	<li><img src="img/pic1.png"/></li>
+        </ul>
+    	<ol>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        	<li class="active"></li>
+        </ol>
+    </div>
+</div>
+
+<!--/*彩色商标开始*/-->
+<ul class="color_shop_mark clearfix">
+	<li>商品</li>
+    <li>生活</li>
+    <li>品牌</li>
+    <li>聚宝盆</li>
+    <li>聚名品</div></li>
+    <li>聚家装</li>
+    <li>聚透</li>
+    <li>客户端</li>
+</ul>
+<!--/*彩色商标结束*/-->
+
+<!--top10开始-->
+<div class="top10 clearfix">
+	<div class="top10_left"><span>|</span>聚划算热卖排行</div>
+    <div class="top10_right">TOP10</div>
+</div>
+
+ <ol class="top10_content">
+	<li class="clearfix">
+    	    <div class="top_li_index1 fl">1</div>
+    		<div  class="img1 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 68888</p>
+                    <p class="p2">2.3折<span>￥299</span></p>
+                </div>
+                <div class="price fr">￥51 &gt;</div>
+            </div>
+            </li>
+            
+            <li class="clearfix">
+    	    <div class="top_li_index2 fl">2</div>
+    		<div  class="img2 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 69988</p>
+                    <p class="p2">2.3折<span>￥29</span></p>
+                </div>
+                <div class="price fr">￥51 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index3 fl">3</div>
+    		<div  class="img3 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 222988</p>
+                    <p class="p2">2.3折<span>￥3309</span></p>
+                </div>
+                <div class="price fr">￥91 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index4 fl">4</div>
+    		<div  class="img4 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 69988</p>
+                    <p class="p2">2.3折<span>￥9</span></p>
+                </div>
+                <div class="price fr">￥5 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index5 fl">5</div>
+    		<div  class="img5 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 69988</p>
+                    <p class="p2">2.3折<span>￥29009</span></p>
+                </div>
+                <div class="price fr">￥51 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index6 fl">6</div>
+    		<div  class="img6 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 67678</p>
+                    <p class="p2">2.3折<span>￥29</span></p>
+                </div>
+                <div class="price fr">￥1 &gt;</div>
+            </div>
+            </li>
+            
+            
+             <li class="clearfix">
+    	    <div class="top_li_index7 fl">7</div>
+    		<div  class="img7 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 698</p>
+                    <p class="p2">2.3折<span>￥299</span></p>
+                </div>
+                <div class="price fr">￥51 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index8 fl">8</div>
+    		<div  class="img8 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 69388</p>
+                    <p class="p2">2.3折<span>￥299</span></p>
+                </div>
+                <div class="price fr">￥35 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index9 fl">9</div>
+    		<div  class="img9 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 6998</p>
+                    <p class="p2">2.3折<span>￥22499</span></p>
+                </div>
+                <div class="price fr">￥5 &gt;</div>
+            </div>
+            </li>
+            
+             <li class="clearfix">
+    	    <div class="top_li_index10 fl">10</div>
+    		<div  class="img10 fl"></div>
+            <div class="top_li_right fr clearfix">
+            	<div class="word fl">
+                	<p class="p1">已售 69288</p>
+                    <p class="p2">2.3折<span>￥2299</span></p>
+                </div>
+                <div class="price fr">￥51 &gt;</div>
+            </div>
+            </li>
+	</ol>
+
+
+<!--top10结束-->
+<!--更多开始-->
+<div class="more_head">更多划算   逛起来！！！</div>
+<div class="more_content clearfix">
+	<div class="more_content_left fl"></div>
+	<div class="more_content_right fl">
+    	<ul class="clearfix">
+        	<li>服装</li>
+            <li>配饰</li>
+            <li>美妆</li>
+            <li>鞋包</li>
+            <li>食品</li>
+            <li>家居</li>
+            <li>运动</li>
+            <li>电器</li>
+            <li>百货</li>
+            <li>母婴</li>
+            <li>数码</li>
+            <li>更多</li>
+        </ul>
+    </div>
+</div>
+
+<div class="more_head_1">精彩商品   逛起来！！！</div>
+<div class="more_content_1 clearfix">
+	<div class="more_content_left_1 fl"></div>
+	<div class="more_content_right_1 fl">
+    	<ul class="clearfix">
+        	<li>美食</li>
+            <li>教育</li>
+            <li>酒店</li>
+            <li>电影</li>
+            <li>生活服务</li>
+            <li>卡券</li>
+            <li>摄影</li>
+            <li>粮油生鲜</li>
+            <li>门票</li>
+            <li>休闲娱乐</li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="more_head_2">品质生活   逛起来！！！</div>
+<div class="more_content_2 clearfix">
+	<div class="more_content_left_2 fl"></div>
+	<div class="more_content_right_2 fl">
+    	<ul class="clearfix">
+        	<li>七匹狼</li>
+            <li>粉红女...</li>
+            <li>卓识你</li>
+            <li>收纳博士</li>
+            <li>惠氏</li>
+            <li>夏乐</li>
+            <li>帕克论</li>
+            <li>古今</li>
+            <li>九牧</li>
+            <li>诺奥</li>
+            <li>红豆</li>
+            <li>曼秀雷敦</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="more_head_2">品牌折扣   逛起来！！！</div>
+<!--给多结束-->
+
+
+
+<!--客户端开始-->
+<ul class="serve clearfix">
+	<li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+<!--客户端结束-->
+
+<div class="login clearfix">
+	<a class="a1" href="javascript:;">登陆</a>
+    <a class="a2" href="javascript:;">注册</a>
+    <a class="a3" href="javascript:;">TOP</a>
+    <a class="a4" href="javascript:;"></a>
+</div>
+
+<!--底部-->
+<div class="bottom"></div>
+</body>
+</html>

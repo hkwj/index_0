@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var oBtn=document.getElementById("btn");
+	//alert(oBtn);
+	var timer=null;
+	var bClick=false;
+	oBtn.onclick=function(){
+		if(bClick==true){
+			return;	
+		}	
+		bClick=true;
+		var time=4;
+		oBtn.value="5秒后可以重新发送；";
+		timer=setInterval(function(){
+			oBtn.value=time+"秒后可以重新发送；";
+			time--;
+			if(time<0){
+				clearInterval(timer);
+				bClick=false;
+				oBtn.value="点击发送验证码";	
+			}	
+		},1000)
+	}
+	
+	
+	
+	
+}
+
+</script>
+</head>
+
+<body>
+<input id="btn" type="button" value="点击发送验证码"/> 
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+.box{
+	width:113px;
+	height:300px;
+	border:1px solid #000;
+	margin:100px auto;
+	border-radius:10px;
+	overflow:hidden;
+	position:relative;
+}
+.box div{
+	width:500px;
+	height:300px;
+	background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px,#fff 80px);
+	position:absolute;
+	top:0;
+	left:0;
+}
+</style>
+<script>
+window.onload=function(){
+	var oC1=document.querySelectorAll("input")[0];
+	var oC2=document.querySelectorAll("input")[1];
+	var oDiv=document.querySelector('.box div');
+	var l=0;
+	setInterval(function(){
+		oDiv.style.left=l+"px";
+		l-=5;
+		if(l<=-113) l=0;	
+	},30);
+	
+	oC1.onchange=oC2.onchange=function(){
+		oDiv.style.background='-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px,'+oC1.value+' 20px,#fff 20px,#fff 40px,'+oC2.value+' 40px,'+oC2.value+' 60px,#fff 60px,#fff 80px)';	
+	};
+};
+
+</script>
+</head>
+
+<body>
+<input type="color" value="#ff0000"/>
+<input type="color" value="#0000ff"/>
+<div class="box">
+	<div></div>
+</div>
+</body>
+</html>

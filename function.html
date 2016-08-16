@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{
+	width:100px;
+	height:100px;
+	background:red;
+}
+</style>
+<script>
+//获取非行间样式
+function getStyle(obj,name){
+	if(obj.currentStyle){
+		return obj.currentStyle[name]	
+	} else {
+		return getComputedStyle(obj,false)[name];	
+	}
+}
+
+
+
+//随机数
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n) + n);
+}
+
+
+// 数组内查找
+function findInArr(n,arr){
+	for(var i=0;i<arr.length;i++){
+		if(n==arr[i]){
+			return true;	
+		}	
+	}
+	return false;
+}
+
+
+
+//查找数组中的最小值，最大值
+function findMin(arr){
+	var iMin=999999;
+	var minIndex=-1;
+	for(var i=0;i<arr.length;i++){
+		if(iMin>arr[i]){
+			iMin=arr[i];	
+			minIndex=i;
+		}	
+	}	
+	alert(iMin);
+	alert(minIndex)
+}
+
+
+
+//查找数组中的最小值，最大值
+function findMax(arr){
+	var iMax=-999999;
+	var maxIndex=-1;
+	for(var i=0;i<arr.length;i++){
+		if(iMax<arr[i]){
+			iMax=arr[i];	
+			maxIndex=i;
+		}	
+	}
+	alert(iMax);
+	alert(maxIndex);
+}
+
+
+//特殊字符串数组转json
+var str="{a:12,b:13,c:14}";
+str=str.substring(1,str.length-1);
+var arr=str.split(",");
+var json={};
+for(var i=0;i<arr.length;i++){
+	var tmpArr=arr[i].split(":");
+	var key=tmpArr[0];
+	var value=tmpArr[1];
+	json[key]=value;	
+}
+console.log(json);
+
+
+//getByClass
+function getByClass(oParent,sClass){
+	if(oParent.getElementsByClassName){//高
+			return oParent.getElementsByClassName(sClass);
+		}else{
+			var aEle=oParent.getElementsByTagName('*');
+			var result=[];
+			for(var i=0;i<aEle.length;i++){
+				var tmpArr=aEle[i].className.split(' ');	
+				for(var j=0;j<tmpArr.length;j++){
+					if(tmpArr[j]==sClass){
+						result.push(aEle[i]);
+						break;
+					}
+				}
+			}
+			
+			return result;
+		}
+
+}
+
+
+
+//删除数组中的某个数   arr传入的数组  n 被删除的数字
+function spliceI(n,arr){
+	for(var i=0;i<arr.length;i++){
+		if(n==arr[i]){
+			arr.splice(i,1);
+			i--;	
+		}	
+	}
+	return arr;
+}
+
+
+
+
+//json数据格式  把json内容写入网页
+
+var str = '比亚迪 奥迪 宝马 奔驰 雪弗莱 大众 夏利 奔驰 林肯 大众 比亚迪 奔驰 奔驰 雪弗莱';
+
+var arr=str.split(' ');
+var json={};
+//去重、统计		//{比亚迪:1,奥迪:1}
+for(var i=0;i<arr.length;i++){
+	var key = arr[i];
+	if(json[key]){
+		json[key]++;
+	}else{
+		json[key]=1;		
+	}
+}
+
+//排序-->json--array->json
+//array:	[{name:大众,count:4},{},{}]
+var arr2=[]
+for(var key in json){
+	arr2.push({name:key,count:json[key]});
+}
+
+arr2.sort(function(j1,j2){return j2.count-j1.count});//由大到小排序
+
+//console.log(arr2);//[{name:比亚迪,count:1},..]
+
+var s='';
+for(var i=0;i<arr2.length;i++){
+	//arr2[i]	==	json
+	//s+='比亚迪 (1)';	
+	s+=  arr2[i].name+'('+arr2[i].count+') ';
+}
+document.write("<br/>"+s);
+
+
+
+//数组去重 排序
+var arr=[1,2,44,11,1,1,22,2,2,2,3,4,5,6,77,8,9,1,2];
+//去重
+for(var i=0;i<arr.length;i++){
+	for(var j=i+1;j<arr.length;j++){
+		if(arr[i]==arr[j]){
+			arr.splice(j,1);	
+			j--;
+		}	
+	}
+};
+//排序
+//arr.sort(function(n1,n2){
+//	return n1-n2;
+//})
+for(var i=0;i<arr.length;i++){
+	for(var j=i+1;j<arr.length;j++){
+		if(arr[i]>arr[j]){
+			var tmp;
+			tmp=arr[i];
+			arr[i]=arr[j];
+			arr[j]=tmp;	
+		}	
+	}
+};
+document.write("<br/>"+arr+"<br/>"+"1");
+
+
+
+
+
+
+
+
+
+
+
+window.onload=function(){
+
+	
+	
+	
+}
+
+
+
+
+
+
+</script>
+</head>
+
+
+<body>
+
+
+<div id="div1"></div>
+</body>
+</html>
